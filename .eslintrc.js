@@ -26,7 +26,7 @@ module.exports = {
     'react/no-array-index-key': 'off', // key 값으로 index를 사용할 수 있다.
     'comma-dangle': 'off', // 마지막에 ',' 을 넣어주지 않는다.
     'arrow-body-style': 'off', // 화살표 함수 안에 return을 사용할 수 있다.
-    'react/no-unscaped-entities': 'off', // 문자열 내에서 " ' > } 허용
+    'react/no-unescaped-entities': 'off', // 문자열 내에서 " ' > } 허용
     'react/prop-types': 'off', // proptypes를 사용하지 않는다.
     'object-curly-newline': 'off', // { 다음 줄 바꿈을 강제로 사용하지 않음.
     'react/jsx-one-expression-per-line': 'off', // 한 라인에 여러 개의 jsx를 사용할 수 있음.
@@ -42,6 +42,7 @@ module.exports = {
     'import/prefer-default-export': 'off', // export default를 사용.
     'no-param-reassign': 'off',
     'react/jsx-curly-newline': 'off', // jsx안에 } 를 새로운 라인에 사용 가능.
+    'react/function-component-definition': 'off',
     'react/jsx-filename-extension': [
       1,
       { extensions: ['.js', '.jsx', '.tsx'] }, // jsx사용 가능한 확장자 설정
