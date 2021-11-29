@@ -1,7 +1,7 @@
-import React from 'react';
+import { NextPage } from 'next';
 
-const Index = () => {
+const index: NextPage = () => {
   return <div>hello Typescript</div>;
 };
 
-export default Index;
+export default index;
