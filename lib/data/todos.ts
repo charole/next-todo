@@ -1,6 +1,7 @@
-import { readFileSync } from 'fs';
+import { readFileSync, writeFileSync } from 'fs';
 import { TodoType } from '../../types/todo';
 
+// todo 데이터 조회
 const getList = () => {
   /* readFile, Promise 사용 시
     const todos = new Promise<TodoType[]>((resolve, reject) => {
@@ -27,4 +28,15 @@ const getList = () => {
   return todos;
 };
 
-export default { getList };
+// id 투두 존재 여부 체크
+const exist = ({ id }: { id: number }) => {
+  const todos = getList();
+  const todo = todos.some((todo) => todo.id === id);
+  return todo;
+};
+
+const write = async (todos: TodoType[]) => {
+  writeFileSync('data/todos.json', JSON.stringify(todos));
+};
+
+export default { getList, exist, write };
