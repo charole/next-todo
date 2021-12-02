@@ -1,32 +1,10 @@
 import { NextApiResponse, NextApiRequest } from 'next';
-import fs from 'fs';
-import { TodoType } from '../../types/todo';
+import Data from '../../lib/data';
 
 export default (req: NextApiRequest, res: NextApiResponse) => {
   if (req.method === 'GET') {
     try {
-      /* readFile, Promise 사용 시
-      const todos = new Promise<TodoType[]>((resolve, reject) => {
-        fs.readFile('data/todos.json', (err, data) => {
-          if (err) {
-            return reject(err.message);
-          }
-          const todoData = data.toString();
-          if (!todoData) {
-            return resolve([]);
-          }
-          const todos = JSON.parse(data.toString());
-          return resolve(todos);
-        });
-      });
-      */
-      const todoBuffer = fs.readFileSync('data/todos.json');
-      const todoString = todoBuffer.toString();
-      if (!todoString) {
-        res.statusCode = 200;
-        return res.send([]);
-      }
-      const todos: TodoType[] = JSON.parse(todoString);
+      const todos = Data.todos.getList();
       res.statusCode = 200;
       return res.send(todos);
     } catch (e) {
