@@ -43,6 +43,7 @@ module.exports = {
     'no-param-reassign': 'off',
     'react/jsx-curly-newline': 'off', // jsx안에 } 를 새로운 라인에 사용 가능.
     'react/function-component-definition': 'off',
+    'default-param-last': 'off',
     'react/jsx-filename-extension': [
       1,
       { extensions: ['.js', '.jsx', '.tsx'] }, // jsx사용 가능한 확장자 설정
